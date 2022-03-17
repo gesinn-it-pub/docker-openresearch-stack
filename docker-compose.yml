@@ -3,7 +3,7 @@ version: '3'
 services:
 
   wiki:
-    image: ghcr.io/gesinn-it/openresearch-stack:5-dev
+    image: ghcr.io/gesinn-it/openresearch-stack:dev
     ports:
       - ${WIKI_PORT:-80}:80
     volumes:

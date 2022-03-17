@@ -1,8 +1,7 @@
 .PHONY: build
 build:
 	docker build \
-	  --secret id=GH_API_TOKEN,src=${HOME}/GH_API_TOKEN \
-	  --tag ghcr.io/gesinn-it/openresearch-stack:1.0.0-alpha1 \
+	  --tag ghcr.io/gesinn-it-pub/openresearch-stack:dev \
 	  ./context
 
 .PHONY: sqlite-up
