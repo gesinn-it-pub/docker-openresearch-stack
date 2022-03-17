@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: openresearch-stack
+  IMAGE_NAME: gesinn-it-pub/openresearch-stack
 
 jobs:
   build:
