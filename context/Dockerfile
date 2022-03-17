@@ -8,6 +8,14 @@ FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 # start from scratch
 RUN rm -rf LocalSettings.php /var/www/data
 
+# add /build-tools and / tools
+RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/Init -o /tools.tgz && \
+    tar -xzf /tools.tgz -C / --strip-components 1 && rm /tools.tgz && chmod +x /build-tools/* /tools/*
+ENV PATH="/tools:/build-tools:${PATH}"
+
+# Overrides
+COPY tools /tools
+
 ######################################
 # install required apt packages      #
 #
@@ -60,13 +68,6 @@ RUN docker-php-ext-install gd zip
 ######################################
 RUN wget http://netcologne.dl.sourceforge.net/project/plantuml/1.2022.2/plantuml-nodot.1.2022.2.jar -P /usr/share/java && \
     (cd /usr/share/java && ln -snf plantuml-nodot.1.2022.2.jar plantuml.jar)
-
-######################################
-# add build tools                    #
-######################################
-ADD build-tools /build-tools
-RUN chmod +x /build-tools/*
-ENV PATH="/build-tools:${PATH}"
 
 ######################################
 # Search Extensions                  #
@@ -131,9 +132,9 @@ RUN apt-get update && apt-get install -y cron
 # add openresearch-stack settings    #
 ######################################
 ADD includes includes/openresearch-stack
+ADD LocalSettings.Include.php .
 ADD LocalSettings.Extensions.php .
 ADD LocalSettings.Debug.php .
-ADD LocalSettings.OpenResearchStack.php .
 
 ######################################
 # set openresearch-stack version         #
@@ -146,13 +147,6 @@ RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt
 ######################################
 ADD php-settings /usr/local/etc/php/conf.d
 RUN chmod 644 /usr/local/etc/php/conf.d/*
-
-######################################
-# add runtime tools                  #
-######################################
-ADD tools /tools
-RUN chmod +x /tools/*
-ENV PATH="/tools:${PATH}"
 
 # use as volume for persistent storage of data, e.g. the current LocalSettings.php
 RUN mkdir /data
