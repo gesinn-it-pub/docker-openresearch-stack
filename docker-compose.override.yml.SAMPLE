@@ -1,0 +1,29 @@
+version: '3'
+
+# Copy this file to docker-compose.override.yml (which is ignored by git)
+# and adjust the copy to your needs.
+# It will override/complement settings in docker-compose.yml.
+
+services:
+
+  wiki:
+    volumes:
+      - ./context/LocalSettings.Extensions.php:/var/www/html/LocalSettings.Extensions.php
+      - ./context/LocalSettings.Debug.php:/var/www/html/LocalSettings.Debug.php
+      - ./context/includes:/var/www/html/includes/semantic-core
+      - ./context/tools:/tools
+      - ./data/wiki:/data
+      # - /var/openresearch-stack/data/wiki:/data
+    environment:
+      - MYSQL_HOST=mysql
+
+  elasticsearch:
+    volumes:
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
+      # - /var/openresearch-stack/data/elasticsearch:/usr/share/elasticsearch/data
+
+  mysql:
+    volumes:
+      ## Will not work with MariaDB and Docker Desktop on Windows!
+      - ./data/mysql:/var/lib/mysql
+      # - /var/openresearch-stack/data/mysql:/var/lib/mysql
