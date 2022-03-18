@@ -9,7 +9,7 @@ FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 RUN rm -rf LocalSettings.php /var/www/data
 
 # add /build-tools and /tools
-RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/Init -o /tools.tgz && \
+RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.0.0 -o /tools.tgz && \
     tar -xzf /tools.tgz -C / --strip-components 1 && rm /tools.tgz
 ENV PATH="/tools:/build-tools:${PATH}"
 # override by custom tools
