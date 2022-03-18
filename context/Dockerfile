@@ -8,17 +8,19 @@ FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 # start from scratch
 RUN rm -rf LocalSettings.php /var/www/data
 
-# add /build-tools and / tools
+# add /build-tools and /tools
 RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/Init -o /tools.tgz && \
-    tar -xzf /tools.tgz -C / --strip-components 1 && rm /tools.tgz && chmod +x /build-tools/* /tools/*
+    tar -xzf /tools.tgz -C / --strip-components 1 && rm /tools.tgz
 ENV PATH="/tools:/build-tools:${PATH}"
-
-# Overrides
+# override by custom tools
 COPY tools /tools
+RUN chmod +x /build-tools/* /tools/*
+
 
 ######################################
 # install required apt packages      #
 #
+# cron
 # ghostscript 1)
 # gnupg 3)
 # graphviz 2)
@@ -38,7 +40,7 @@ COPY tools /tools
 # 5) SemanticResultFormats (phpoffice/phpspreadsheet)
 ######################################
 RUN apt-get update && \
-    apt-get install -y ghostscript gnupg graphviz imagemagick libpng-dev libzip-dev poppler-utils software-properties-common wget zip zlib1g-dev
+    apt-get install -y cron ghostscript gnupg graphviz imagemagick libpng-dev libzip-dev poppler-utils software-properties-common wget zip zlib1g-dev
 
 ######################################
 # install Java                       #
@@ -97,23 +99,19 @@ RUN get-github-extension.sh CirrusSearch bb6b3475dc813bfb328ba012c880fd938d8a88c
 ######################################
 
 ### Chameleon
-# installed via tools/initialize-wiki.sh
-
-#### SemanticCoreSkin
-#RUN --mount=type=secret,id=GH_API_TOKEN \
-#    get-private-github-extension.sh SemanticCoreSkin 2019.5.8
+# RUN composer-require.sh mediawiki/chameleon-skin 4.0.0
 
 ######################################
 # Extensions                         #
 ######################################
 
 ### SemanticMediaWiki
-RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.0.0
+RUN composer-require.sh mediawiki/semantic-media-wiki 4.0.0
 
 ######################################
 # composer update                    #
 ######################################
-RUN sudo -u www-data composer update
+RUN composer-update.sh
 
 ######################################
 # patches                            #
@@ -122,11 +120,6 @@ RUN \
     # Autocompletion in search field does not work
     sed -i "s!ApiBase::LIMIT_SML1!100!g" \
 	    includes/api/Validator/ApiParamValidator.php
-
-######################################
-# install cron                       #
-######################################
-RUN apt-get update && apt-get install -y cron
 
 ######################################
 # add openresearch-stack settings    #

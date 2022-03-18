@@ -10,7 +10,7 @@ wfLoadExtension( "Elastica" );
 
 ## -------- CirrusSearch --------
 wfLoadExtension( "CirrusSearch" );
-$wgCirrusSearchServers = [$wgOpenResearchStackEnvironment[ 'ELASTICSEARCH_HOST' ] ?? "127.0.0.1" ];
+$wgCirrusSearchServers = [$wgNetworkEnvironment[ 'ELASTICSEARCH_HOST' ] ?? "127.0.0.1" ];
 $wgSearchType = "CirrusSearch";
 $wgCirrusSearchPrefixSearchStartsWithAnyWord = true;
 ## ======== CirrusSearch ========
@@ -20,13 +20,7 @@ $wgCirrusSearchPrefixSearchStartsWithAnyWord = true;
 //////////////////////////////////////////
 
 ## -------- VisualEditor --------
-wfLoadExtension( 'Parsoid', "$IP/vendor/wikimedia/parsoid/extension.json" );
 wfLoadExtension( "VisualEditor" );
-$wgHiddenPrefs[] = "visualeditor-enable";
-$wgDefaultUserOptions["visualeditor-enable-experimental"] = 1;
-$wgVirtualRestConfig['modules']['parsoid'] = [
-	'url' => 'http://localhost/rest.php'
-];
 ## ======== VisualEditor ========
 
 //////////////////////////////////////////
