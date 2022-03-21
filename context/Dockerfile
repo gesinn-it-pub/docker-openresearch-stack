@@ -9,13 +9,12 @@ FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 RUN rm -rf LocalSettings.php /var/www/data
 
 # add /build-tools and /tools
-RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.0.0 -o /tools.tgz && \
+RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.0.1 -o /tools.tgz && \
     tar -xzf /tools.tgz -C / --strip-components 1 && rm /tools.tgz
-ENV PATH="/tools:/build-tools:${PATH}"
 # override by custom tools
 COPY tools /tools
 RUN chmod +x /build-tools/* /tools/*
-
+ENV PATH="/tools:/build-tools:${PATH}"
 
 ######################################
 # install required apt packages      #
@@ -99,7 +98,7 @@ RUN get-github-extension.sh CirrusSearch bb6b3475dc813bfb328ba012c880fd938d8a88c
 ######################################
 
 ### Chameleon
-# RUN composer-require.sh mediawiki/chameleon-skin 4.0.0
+RUN composer-require.sh mediawiki/chameleon-skin 4.0.0
 
 ######################################
 # Extensions                         #
