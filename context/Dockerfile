@@ -15,6 +15,7 @@ RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.0
 COPY tools /tools
 RUN chmod +x /build-tools/* /tools/*
 ENV PATH="/tools:/build-tools:${PATH}"
+ADD patches /patches
 
 ######################################
 # install required apt packages      #
@@ -104,8 +105,129 @@ RUN composer-require.sh mediawiki/chameleon-skin 4.0.0
 # Extensions                         #
 ######################################
 
+### AdminLinks
+RUN get-github-extension.sh AdminLinks 0.4.2
+
+### Arrays (2022-02-06)
+RUN get-github-extension.sh Arrays ce3f62878a825ef5df7a79e51fc2da7c95893a65
+
+### Extension:CategoryTree (TODO: required?)
+
+### Extension:WikiEditor
+### Required by CodeEditor
+
+### Extension:CodeEditor
+### Requires WikiEditor
+
+### CookieWarning (2022-02-06)
+RUN get-github-extension.sh CookieWarning a91b78000f25bd907dcc30bf5b2e10371a837552
+
+### Extension:ConfirmAccount
+
+### ConfirmEdit (enabled as shipped with MediaWiki)
+
+### CSS (2022-02-06)
+RUN get-github-extension.sh CSS 91f9d53fc0c58e2772719cf5e9d0bfd3d12151d4
+
+### Extension:DataTransfer
+
+### DateDiff
+RUN get-github-extension.sh DateDiff 0.3.1
+
+### DisplayTitle
+RUN get-github-extension.sh DisplayTitle 3.1
+
+### Echo (REL1_35 2022-02-21)
+RUN get-github-extension.sh Echo 8c593b995992d4d3ede9bef58d39bc070a6cdd8d
+
+### ExternalData
+RUN get-github-extension.sh ExternalData 3.0 && \
+	patch.sh extensions/ExternalData/sql/ExternalData.sql
+
+### Extension:HeaderTabs
+
+### IDProvider
+RUN get-github-extension.sh IDProvider 2.0.2 gesinn-it/IDProvider
+
+#### ImageMap (enabled as shipped with MediaWiki)
+
+### JSBreadCrumbs
+RUN get-github-extension.sh JSBreadCrumbs 1.1.0
+
+### Loops (2021-12-13)
+RUN get-github-extension.sh Loops 8415e0b22bbe6dce5cb4b34c5edf0c27b219e85b
+
+### Maps
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps 9.0.7
+
+### Matomo
+RUN get-github-extension.sh Matomo v4.0.1 DaSchTour/matomo-mediawiki-extension
+
+### Mermaid
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/mermaid 3.0.1
+
+### MultimediaViewer (enabled as shipped with MediaWiki)
+
+### NativeSvgHandler (2021-12-05)
+RUN get-github-extension.sh NativeSvgHandler 13c02680047ec77fff4a6b7c4919e23c4ce7b081
+
+### Extension:Nuke
+
+### NumberFormat (2022-02-25)
+RUN get-github-extension.sh NumberFormat a704f8834afbe21545079d577390a0a89560f072
+
+### OpenLayers (2022-02-25)
+RUN get-github-extension.sh OpenLayers e61f5b7c6ff2ad9321ba7c1e3b3e1333b470f870
+
+### ParserFunctions enabled as shipped with MediaWiki)
+
+### PageForms
+RUN get-github-extension.sh PageForms 5.3.4 gesinn-it/mediawiki-extensions-PageForms
+
+### TextExtracts (enabled as shipped with MediaWiki)
+
+### PageImages (enabled as shipped with MediaWiki)
+
+### Popups (2022-03-06)
+RUN get-github-extension.sh Popups b6eb2627ff3f1fc93060f663efc2f8b302dbb376
+
+### RegexFunctions (2022-01-11)
+RUN get-github-extension.sh RegexFunctions af37c1050139b0b83360285e8d7ff9454d4c6ecc
+
+### ReplaceText (enabled as shipped with MediaWiki)
+
 ### SemanticMediaWiki
-RUN composer-require.sh mediawiki/semantic-media-wiki 4.0.0
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.0.0
+
+### SemanticCompoundQueries
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
+
+### SemanticResultFormats
+RUN COMPOSER=composer.local.json composer require --no-update phpoffice/phpspreadsheet 1.22.0
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-result-formats 4.0.1
+
+### SimpleTooltip
+RUN get-github-extension.sh SimpleTooltip 2476bff8f4555f86795c26ca5fdb7db99bfe58d1 Fannon/SimpleTooltip
+
+### Extension:TitleBlacklist
+
+### TitleIcon
+RUN get-github-extension.sh TitleIcon 5.2
+
+### UrlGetParameters (2021-11-13)
+RUN get-github-extension.sh UrlGetParameters ae491b9472ca60ab4a0afa84874824632bd6c833
+
+### UserFunctions (2021-12-12)
+RUN get-github-extension.sh UserFunctions b6ac1ddfc3742cd88d71fa9039b06161cbc11b27
+
+### UserMerge (REL1_35 2022-02-28)
+RUN get-github-extension.sh UserMerge 81739e0c967286264b132a64941d0da9575d79a1
+
+### Variables
+RUN get-github-extension.sh Variables v2.5.1
+
+### VEForAll
+RUN get-github-extension.sh VEForAll 0.4
 
 ######################################
 # composer update                    #

@@ -1,0 +1,16 @@
+--- ExternalData.sql.orig       2022-03-09 11:55:06.860406300 +0000
++++ ExternalData.sql    2022-03-09 11:57:32.020406300 +0000
+@@ -1,9 +1,9 @@
+ CREATE TABLE /*_*/ed_url_cache (
+-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
++  `id` int(10) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   `url` varchar(255) NOT NULL,
+   `post_vars` text,
+   `req_time` int(11) NOT NULL,
+-  `result` longtext,
+-  UNIQUE KEY `id` (`id`),
+-  KEY `url` (`url`)
++  `result` longtext
+ ) /*$wgDBTableOptions*/;
++
++CREATE INDEX ed_url_cache_url ON /*_*/ed_url_cache (`url`);
