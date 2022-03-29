@@ -41,8 +41,6 @@ wfLoadExtension( "AdminLinks" );
 
 ## -------- Arrays --------
 wfLoadExtension( "Arrays" );
-$egArraysCompatibilityMode = false;
-$egArraysExpansionEscapeTemplates = null;
 ## ======== Arrays ========
 
 ## -------- CookieWarning --------
@@ -51,17 +49,6 @@ $egArraysExpansionEscapeTemplates = null;
 
 ## -------- ConfirmEdit --------
 # wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
-$wgCaptchaClass = "QuestyCaptcha";
-$wgCaptchaTriggers['edit']          = true;
-$wgCaptchaTriggers['create']        = true;
-$wgCaptchaTriggers['createtalk']    = true;
-$wgCaptchaTriggers['addurl']        = true;
-$wgCaptchaTriggers['createaccount'] = true;
-$wgCaptchaTriggers['badlogin']      = true;
-$wgCaptchaQuestions[] = array( "question" => "Germany's highest mountain?", "answer" => "Zugspitze");
-$wgCaptchaQuestions[] = array( "question" => "Germany's capital?", "answer" => "Berlin");
-# $wgCaptchaQuestions[] = array( "question" => "Deutschlands höchster Berg?", "answer" => "Zugspitze");
-# $wgCaptchaQuestions[] = array( "question" => "Deutschlands Hauptstadt?", "answer" => "Berlin");
 ## ======== ConfirmEdit ========
 
 ## -------- CSS --------
@@ -74,10 +61,6 @@ require_once( "$IP/extensions/DateDiff/DateDiff.php" );
 
 ## -------- DisplayTitle --------
 wfLoadExtension( "DisplayTitle" );
-$wgAllowDisplayTitle = true;
-$wgRestrictDisplayTitle = false;
-$wgDisplayTitleHideSubtitle = true;
-$wgDisplayTitleExcludes = [ "Special:ListRedirects", "Special:DoubleRedirects", "Special:MovePage" ];
 ## ======== DisplayTitle ========
 
 ## -------- Echo --------
@@ -86,35 +69,6 @@ wfLoadExtension( "Echo" );
 
 ## -------- ExternalData --------
 wfLoadExtension( "ExternalData" );
-
-$wgExternalDataSources['graphviz'] = [
-	'name'              => 'GraphViz',
-	'program url'       => 'https://graphviz.org/',
-	'version command'   => null,
-	'command'           => 'dot -K$layout$ -Tsvg',
-	'params'            => [ 'layout' => 'dot' ],
-	'param filters'     => [ 'layout' => '/^(dot|neato|twopi|circo|fdp|osage|patchwork|sfdp)$/' ],
-	'input'             => 'dot',
-	'preprocess'        => 'EDConnectorExe::wikilinks4dot',
-	'postprocess'       => 'EDConnectorExe::innerXML',
-	'min cache seconds' => 30 * 24 * 60 * 60,
-	'tag'               => 'graphviz'
-];
-
-$wgExternalDataSources['plantuml'] = [
-	'name'				=> 'PlantUML',
-	'program url'		=> 'https://plantuml.com',
-	'version command'	=> 'java -jar /usr/share/java/plantuml.jar -version',
-	'command'			=> 'java -jar /usr/share/java/plantuml.jar -tsvg -charset UTF-8 -p',
-	'env'				=> [ 'LOG4J_FORMAT_MSG_NO_LOOKUPS' => true ],
-	'limits'			=> [ 'memory' => 0 ],
-	'params'			=> [ 'uml' ],
-	'input'				=> 'uml',
-	'preprocess'		=> 'EDConnectorExe::wikilinks4uml',
-	'postprocess'		=> 'EDConnectorExe::innerXML',
-	'min cache seconds'	=> 30 * 24 * 60 * 60,
-	'tag'				=> 'plantuml'
-];
 ## ======== ExternalData ========
 
 ## -------- IDProvider --------
@@ -123,7 +77,6 @@ wfLoadExtension( "IDProvider" );
 
 ## -------- JSBreadCrumbs --------
 wfLoadExtension( "JSBreadCrumbs" );
-$wgJSBreadCrumbsHorizontalSeparator = '>';
 ## ======== JSBreadCrumbs ========
 
 ## -------- Loops --------
@@ -168,11 +121,6 @@ $wgPFEnableStringFunctions = true;
 
 ## -------- PageForms --------
 wfLoadExtension( "PageForms" );
-$wgPageFormsAutocompleteOnAllChars = true;
-$wgPageFormsMaxAutocompleteValues = 3000;;
-$wgPageFormsMaxLocalAutocompleteValues = 5000;
-$wgPageForms24HourTime = true;
-$wgPageFormsListSeparator = ";";
 ## ======== PageForms ========
 
 ## -------- TextExtracts --------
@@ -183,14 +131,10 @@ wfLoadExtension( "TextExtracts" );
 ## -------- PageImages --------
 ## required by Popups
 wfLoadExtension( "PageImages" );
-$wgPageImagesLeadSectionOnly = false;
 ## ======== PageImages ========
 
 ## -------- Popups --------
 # wfLoadExtension( "Popups" );
-$wgPopupsHideOptInOnPreferencesPage = true;
-$wgPopupsOptInDefaultState = "1";
-$wgPopupsReferencePreviewsBetaFeature = false;
 ## ======== Popups ========
 
 ## -------- RegexFunctions --------
@@ -215,10 +159,6 @@ wfLoadExtension( "SemanticCompoundQueries" );
 ## -------- SemanticResultFormats --------
 # SemanticResultFormats included via Composer
 wfLoadExtension( "SemanticResultFormats" );
-$srfgFormats[] = "gantt";
-$srfgFormats[] = "graph";
-$srfgFormats[] = "excel";
-$srfgFormats[] = "filtered";
 ## ======== SemanticResultFormats ========
 
 ## -------- SimpleTooltip --------
@@ -227,8 +167,6 @@ require_once( "$IP/extensions/SimpleTooltip/SimpleTooltip.php" );
 
 ## -------- TitleIcon --------
 wfLoadExtension( "TitleIcon" );
-$wgTitleIcon_CSSSelector = "h1.firstHeading";
-$wgTitleIcon_UseFileNameAsToolTip = false;
 ## ======== TitleIcon ========
 
 ## -------- UrlGetParameters --------
@@ -237,14 +175,10 @@ wfLoadExtension( "UrlGetParameters" );
 
 ## -------- UserFunctions --------
 wfLoadExtension( "UserFunctions" );
-$wgUFEnablePersonalDataFunctions = true;
-$wgUFAllowedNamespaces[NS_MAIN] = true;
 ## ======== UserFunctions ========
 
 ## -------- UserMerge --------
 wfLoadExtension( "UserMerge" );
-$wgGroupPermissions["sysop"]["usermerge"] = true;
-$wgGroupPermissions["bureaucrat"]["usermerge"] = true;
 ## ======== UserMerge ========
 
 ## -------- Variables --------
