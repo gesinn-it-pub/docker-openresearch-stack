@@ -47,6 +47,10 @@ wfLoadExtension( "Arrays" );
 # wfLoadExtension( "CookieWarning" );
 ## ======== CookieWarning ========
 
+## -------- ConfirmAccount --------
+# wfLoadExtension( "ConfirmAccount" );
+## ======== ConfirmAccount ========
+
 ## -------- ConfirmEdit --------
 # wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
 ## ======== ConfirmEdit ========

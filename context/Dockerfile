@@ -99,7 +99,7 @@ RUN get-github-extension.sh CirrusSearch bb6b3475dc813bfb328ba012c880fd938d8a88c
 ######################################
 
 ### Chameleon
-RUN composer-require.sh mediawiki/chameleon-skin 4.0.0
+RUN composer-require.sh mediawiki/chameleon-skin 4.1.0
 
 ######################################
 # Extensions                         #
@@ -122,7 +122,8 @@ RUN get-github-extension.sh Arrays ce3f62878a825ef5df7a79e51fc2da7c95893a65
 ### CookieWarning (2022-02-06)
 RUN get-github-extension.sh CookieWarning a91b78000f25bd907dcc30bf5b2e10371a837552
 
-### Extension:ConfirmAccount
+### ConfirmAccount (REL1_35 2022-03-28)
+RUN get-github-extension.sh ConfirmAccount 2681e4d1712c4b2e9b6fcc02fb1aa01bf1f2404b
 
 ### ConfirmEdit (enabled as shipped with MediaWiki)
 
