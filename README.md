@@ -2,6 +2,8 @@
 
 Build a local OpenResearch Stack (MediaWiki &amp; extensions) with Docker.
 
+> This repository is for testing purpose and will be moved to a final location at a later point in time.
+
 ## Requirements
 
 #### Docker
@@ -14,6 +16,9 @@ https://www.docker.com/get-started
 ```
 docker-compose --version
 ```
+
+## Getting started
+
 ## Release
 - Set version in `context/Dockerfile` following the [Semantic Versioning Specification](https://semver.org/):
 
