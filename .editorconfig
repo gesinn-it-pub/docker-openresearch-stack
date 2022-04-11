@@ -13,3 +13,6 @@ end_of_line = lf
 [*.yml]
 indent_style = space
 tab_width = 2
+
+[*.js]
+indent_style = space

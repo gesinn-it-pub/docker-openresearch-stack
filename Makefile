@@ -30,7 +30,7 @@ down:
 
 .PHONY: backstop-test
 backstop-test:
-	docker-compose run --rm backstop test
+	docker-compose run --rm backstop --config backstop.config.js test
 
 .PHONY: clean
 clean: down
