@@ -17,6 +17,15 @@ const screen = {
 };
 
 
+const scenario = config => ({
+	// anything below did, e.g., not produce "click menu toggler then page tools" reliably on my machine
+	postInteractionWait: 200,
+	misMatchThreshold: 0,
+	// hide "This page was last edited on ..."
+	hideSelectors: ["div#footer-info div"],
+	...config
+});
+
 module.exports = {
 	id: "backstop_default",
 	viewports: [phone, tablet, screen],
@@ -34,9 +43,8 @@ module.exports = {
 		label: "Main Page - click menu toggler then page tools",
 		url: "http://wiki.local",
 		clickSelectors: [".navbar-toggler", ".navbar-more-tools"],
-		postInteractionWait: 200, // anything below did not produce the menu reliably on my machine
 		viewports: [phone, tablet]
-	}],
+	}].map(scenario),
 	paths: {
 		bitmaps_reference: "backstop_data/bitmaps_reference",
 		engine_scripts: "backstop_data/engine_scripts",
