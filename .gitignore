@@ -1,2 +1,6 @@
+.idea
 data
 docker-compose.override.yml
+backstop/backstop_data/bitmaps_test
+backstop/backstop_data/ci_report
+backstop/backstop_data/html_report

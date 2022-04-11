@@ -9,7 +9,8 @@ services:
     volumes:
       - ./backstop/backstop_data:/var/www/html/backstop
     environment:
-      - WIKI_DOMAIN=${WIKI_DOMAIN:-localhost}
+      - WIKI_DOMAIN
+      - WIKI_PORT
       - ELASTICSEARCH_HOST=elasticsearch
       - MYSQL_HOST
 
@@ -31,5 +32,7 @@ services:
     image: backstopjs/backstopjs:6.0.4
     volumes:
       - ./backstop:/src
+    links:
+      - "wiki:wiki.local"
     profiles:
       - no-profile
