@@ -2,7 +2,7 @@
 # docker-openresearch-stack          #
 ######################################
 
-ARG MEDIAWIKI_VERSION=1.35.5
+ARG MEDIAWIKI_VERSION=1.35.6
 FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 
 # start from scratch
