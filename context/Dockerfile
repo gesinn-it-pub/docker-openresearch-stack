@@ -252,9 +252,9 @@ ADD LocalSettings.Extensions.php .
 ADD LocalSettings.Debug.php .
 
 ######################################
-# set openresearch-stack version         #
+# set openresearch-stack version     #
 ######################################
-ARG OPENRESEARCH_STACK_VERSION=0.0.7
+ARG OPENRESEARCH_STACK_VERSION=0.0.8
 RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt
 
 ######################################
