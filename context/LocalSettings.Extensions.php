@@ -75,6 +75,10 @@ wfLoadExtension( "Echo" );
 wfLoadExtension( "ExternalData" );
 ## ======== ExternalData ========
 
+## -------- SyntaxHighlight_GeSHi --------
+wfLoadExtension( "SyntaxHighlight_GeSHi" );
+## ======== SyntaxHighlight_GeSHi ========
+
 ## -------- IDProvider --------
 wfLoadExtension( "IDProvider" );
 ## ======== IDProvider ========
