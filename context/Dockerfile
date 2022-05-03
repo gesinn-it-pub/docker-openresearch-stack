@@ -257,7 +257,7 @@ ADD LocalSettings.Debug.php .
 ######################################
 # set openresearch-stack version     #
 ######################################
-ARG OPENRESEARCH_STACK_VERSION=0.0.9
+ARG OPENRESEARCH_STACK_VERSION=0.0.10
 RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt && \
     echo "\$wgOpenResearchStackVersion = '$OPENRESEARCH_STACK_VERSION';" >> LocalSettings.Include.php
 
