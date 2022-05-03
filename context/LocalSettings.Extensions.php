@@ -106,6 +106,11 @@ wfLoadExtension( "Maps" );
 wfLoadExtension( "Mermaid" );
 ## ======== Mermaid ========
 
+## -------- Modern Timeline --------
+# Modern Timeline included via Composer
+wfLoadExtension( "ModernTimeline" );
+## ======== Mermaid ========
+
 ## -------- MultimediaViewer --------
 wfLoadExtension( "MultimediaViewer" );
 ## ======== MultimediaViewer ========

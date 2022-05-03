@@ -167,6 +167,9 @@ RUN get-github-extension.sh Matomo v4.0.1 DaSchTour/matomo-mediawiki-extension
 ### Mermaid
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/mermaid 3.0.1
 
+### Modern Timeline
+RUN COMPOSER=composer.local.json composer require --no-update professional-wiki/modern-timeline 1.2.1
+
 ### MultimediaViewer (enabled as shipped with MediaWiki)
 
 ### NativeSvgHandler (2021-12-05)
