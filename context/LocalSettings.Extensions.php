@@ -84,7 +84,7 @@ wfLoadExtension( "IDProvider" );
 ## ======== IDProvider ========
 
 ## -------- JSBreadCrumbs --------
-wfLoadExtension( "JSBreadCrumbs" );
+# wfLoadExtension( "JSBreadCrumbs" );
 ## ======== JSBreadCrumbs ========
 
 ## -------- Loops --------
