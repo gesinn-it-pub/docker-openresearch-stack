@@ -40,7 +40,8 @@ ADD patches /patches
 # 5) SemanticResultFormats (phpoffice/phpspreadsheet)
 ######################################
 RUN apt-get update && \
-    apt-get install -y cron ghostscript gnupg graphviz imagemagick libpng-dev libzip-dev poppler-utils software-properties-common wget zip zlib1g-dev
+    apt-get install -y cron ghostscript gnupg graphviz imagemagick libpng-dev libzip-dev poppler-utils software-properties-common wget zip zlib1g-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 ######################################
 # install Java                       #
@@ -50,9 +51,8 @@ RUN apt-get update && \
 RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add - && \
     add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
     apt-get update && \
-    apt-get install -y adoptopenjdk-11-hotspot-jre
-
-RUN rm -rf /var/lib/apt/lists/*
+    apt-get install -y adoptopenjdk-11-hotspot-jre && \
+    rm -rf /var/lib/apt/lists/*
 
 ######################################
 # install required php packages      #
@@ -254,8 +254,9 @@ ADD LocalSettings.Debug.php .
 ######################################
 # set openresearch-stack version     #
 ######################################
-ARG OPENRESEARCH_STACK_VERSION=0.0.8
-RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt
+ARG OPENRESEARCH_STACK_VERSION=0.0.9
+RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt && \
+    echo "\$wgOpenResearchStackVersion = '$OPENRESEARCH_STACK_VERSION';" >> LocalSettings.Include.php
 
 ######################################
 # add php-settings                   #

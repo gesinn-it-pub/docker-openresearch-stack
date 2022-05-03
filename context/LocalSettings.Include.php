@@ -28,3 +28,5 @@ if (file_exists( "$IP/LocalSettings.CustomPermissions.php" )) {
 if (file_exists( "$IP/LocalSettings.TMP.php" )) {
     require_once( "$IP/LocalSettings.TMP.php" );
 }
+
+# versions
