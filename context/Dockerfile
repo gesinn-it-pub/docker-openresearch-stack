@@ -253,7 +253,6 @@ ADD includes includes/openresearch-stack
 ADD LocalSettings.Include.php .
 ADD LocalSettings.Extensions.php .
 ADD LocalSettings.Debug.php .
-ADD LocalSettings.Runtime.php .
 
 ######################################
 # set openresearch-stack version     #
