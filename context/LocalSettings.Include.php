@@ -1,5 +1,9 @@
 <?php
 
+########################################
+# Static settings                      #
+########################################
+
 if (file_exists( "$IP/LocalSettings.Debug.php" )) {
     require_once( "$IP/LocalSettings.Debug.php" );
 }
@@ -22,6 +26,14 @@ if (file_exists( "$IP/LocalSettings.Custom.php" )) {
 
 if (file_exists( "$IP/LocalSettings.CustomPermissions.php" )) {
     require_once( "$IP/LocalSettings.CustomPermissions.php" );
+}
+
+########################################
+# Runtime settings                     #
+########################################
+
+if (file_exists( "$IP/LocalSettings.Runtime.php" )) {
+	require_once( "$IP/LocalSettings.Runtime.php" );
 }
 
 # for temporary requirements, used e.g. by cirrus search initialization
