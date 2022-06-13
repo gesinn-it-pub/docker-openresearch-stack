@@ -87,6 +87,10 @@ wfLoadExtension( "IDProvider" );
 # wfLoadExtension( "JSBreadCrumbs" );
 ## ======== JSBreadCrumbs ========
 
+## -------- LegalLogin --------
+wfLoadExtension( "LegalLogin" );
+## ======== LegalLogin ========
+
 ## -------- Loops --------
 wfLoadExtension( "Loops" );
 $egLoopsCountLimit = 1000;
