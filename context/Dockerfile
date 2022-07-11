@@ -2,14 +2,14 @@
 # docker-openresearch-stack          #
 ######################################
 
-ARG MEDIAWIKI_VERSION=1.35.6
+ARG MEDIAWIKI_VERSION=1.35.7
 FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 
 # start from scratch
 RUN rm -rf LocalSettings.php /var/www/data
 
 # add /build-tools and /tools
-RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.0.4 -o /tools.tgz && \
+RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.1.1 -o /tools.tgz && \
     tar -xzf /tools.tgz -C / --strip-components 1 && rm /tools.tgz
 # override by custom tools
 COPY tools /tools
