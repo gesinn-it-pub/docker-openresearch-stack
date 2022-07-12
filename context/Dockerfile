@@ -111,6 +111,9 @@ RUN get-github-extension.sh AdminLinks 0.4.2
 ### Arrays (2022-02-06)
 RUN get-github-extension.sh Arrays ce3f62878a825ef5df7a79e51fc2da7c95893a65
 
+### AutoCreatePage
+RUN get-github-extension.sh AutoCreatePage 1597e3d gesinn-it-pub/AutoCreatePage
+
 ### Extension:CategoryTree (TODO: required?)
 
 ### Extension:WikiEditor

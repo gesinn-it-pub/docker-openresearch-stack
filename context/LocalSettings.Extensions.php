@@ -43,6 +43,10 @@ wfLoadExtension( "AdminLinks" );
 wfLoadExtension( "Arrays" );
 ## ======== Arrays ========
 
+## -------- AutoCreatePage --------
+wfLoadExtension( "AutoCreatePage" );
+## ======== AutoCreatePage ========
+
 ## -------- CookieWarning --------
 # wfLoadExtension( "CookieWarning" );
 ## ======== CookieWarning ========
