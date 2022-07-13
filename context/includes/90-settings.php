@@ -16,17 +16,11 @@ $wgCacheDirectory = "$IP/cache";
 $wgJobRunRate = 0;
 $wgFavicon = "$wgScriptPath/favicon.ico";
 
-
 ## Shared memory settings
-$wgMainCacheType = CACHE_NONE;
-$wgParserCacheType = CACHE_NONE;
-$wgMessageCacheType = CACHE_NONE;
-
-#$wgMainCacheType = CACHE_MEMCACHED;
-#$wgParserCacheType = CACHE_MEMCACHED;
-#$wgMessageCacheType = CACHE_MEMCACHED;
-
-#$wgMemCachedServers = array( "127.0.0.1:11211" );
+$wgMainCacheType = CACHE_MEMCACHED;
+$wgParserCacheType = CACHE_MEMCACHED;
+$wgMessageCacheType = CACHE_MEMCACHED;
+$wgMemCachedServers = array( "127.0.0.1:11211" );
 
 ## Shell Memory Settings (required e.g. by PDF Handler for large PDFs)
 $wgMaxShellFileSize=614400;

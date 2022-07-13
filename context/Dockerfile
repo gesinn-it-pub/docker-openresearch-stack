@@ -9,8 +9,8 @@ FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 RUN rm -rf LocalSettings.php /var/www/data
 
 # add /build-tools and /tools
-RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.1.1 -o /tools.tgz && \
-    tar -xzf /tools.tgz -C / --strip-components 1 && rm /tools.tgz
+RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.1.1 \
+	| tar xzC / --strip-components 1
 # override by custom tools
 COPY tools /tools
 RUN chmod +x /build-tools/* /tools/*
@@ -20,13 +20,14 @@ ADD patches /patches
 ######################################
 # install required apt packages      #
 #
-# cron
+# cron 6)
 # ghostscript 1)
 # gnupg 3)
 # graphviz 2)
 # imagemagick 1)
 # libpng-dev 4)
 # libzip-dev 5)
+# memcached 7)
 # poppler-utils 1)
 # software-properties-common 3)
 # wget 3)
@@ -40,7 +41,7 @@ ADD patches /patches
 # 5) SemanticResultFormats (phpoffice/phpspreadsheet)
 ######################################
 RUN apt-get update && \
-    apt-get install -y cron ghostscript gnupg graphviz imagemagick libpng-dev libzip-dev poppler-utils software-properties-common wget zip zlib1g-dev && \
+    apt-get install -y cron ghostscript gnupg graphviz imagemagick libpng-dev libzip-dev memcached poppler-utils software-properties-common wget zip zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
 ######################################
@@ -263,7 +264,7 @@ ADD LocalSettings.Debug.php .
 ######################################
 # set openresearch-stack version     #
 ######################################
-ARG OPENRESEARCH_STACK_VERSION=0.0.14
+ARG OPENRESEARCH_STACK_VERSION=0.0.15
 RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt && \
     echo "\$wgOpenResearchStackVersion = '$OPENRESEARCH_STACK_VERSION';" >> LocalSettings.Include.php
 

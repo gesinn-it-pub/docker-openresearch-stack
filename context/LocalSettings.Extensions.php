@@ -170,6 +170,9 @@ wfLoadExtension( "ReplaceText" );
 # SemanticMediaWiki included via Composer
 wfLoadExtension( "SemanticMediaWiki" );
 enableSemantics( $wgServer );
+# required if caching is used; otherwise dependent inline queries are not updated
+# (see https://www.semantic-mediawiki.org/wiki/Help:Embedded_query_update)
+$smwgEnabledQueryDependencyLinksStore = true;
 ## ======== SemanticMediaWiki ========
 
 ## -------- SemanticCompoundQueries --------
