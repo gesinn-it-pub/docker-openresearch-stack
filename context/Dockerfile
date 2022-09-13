@@ -208,7 +208,7 @@ RUN get-github-extension.sh RegexFunctions af37c1050139b0b83360285e8d7ff9454d4c6
 ### ReplaceText (enabled as shipped with MediaWiki)
 
 ### SemanticMediaWiki
-RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.0.0
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.0.2
 
 ### SemanticCompoundQueries
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
