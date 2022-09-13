@@ -193,7 +193,7 @@ RUN get-github-extension.sh OpenLayers e61f5b7c6ff2ad9321ba7c1e3b3e1333b470f870
 ### ParserFunctions enabled as shipped with MediaWiki)
 
 ### PageForms
-RUN get-github-extension.sh PageForms 5.3.4-3 gesinn-it/mediawiki-extensions-PageForms
+RUN get-github-extension.sh PageForms 5.3.4.4 gesinn-it/mediawiki-extensions-PageForms
 
 ### TextExtracts (enabled as shipped with MediaWiki)
 
