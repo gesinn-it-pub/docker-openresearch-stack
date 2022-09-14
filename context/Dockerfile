@@ -208,7 +208,9 @@ RUN get-github-extension.sh RegexFunctions af37c1050139b0b83360285e8d7ff9454d4c6
 ### ReplaceText (enabled as shipped with MediaWiki)
 
 ### SemanticMediaWiki
-RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.0.2
+#RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.0.2
+## ISO-P formatter
+RUN composer-require.sh mediawiki/semantic-media-wiki 'dev-master#779f4784210de69f104705b0ec6e136f38375698 as 4.0.2'
 
 ### SemanticCompoundQueries
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
@@ -264,7 +266,7 @@ ADD LocalSettings.Debug.php .
 ######################################
 # set openresearch-stack version     #
 ######################################
-ARG OPENRESEARCH_STACK_VERSION=0.0.17
+ARG OPENRESEARCH_STACK_VERSION=0.0.18
 RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt && \
     echo "\$wgOpenResearchStackVersion = '$OPENRESEARCH_STACK_VERSION';" >> LocalSettings.Include.php
 
