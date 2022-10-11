@@ -180,6 +180,11 @@ $smwgEnabledQueryDependencyLinksStore = true;
 wfLoadExtension( "SemanticCompoundQueries" );
 ## ======== SemanticCompoundQueries ========
 
+## -------- SemanticDependencyUpdater --------
+wfLoadExtension( "SemanticDependencyUpdater" );
+$wgSDUUseJobQueue = false;
+## ======== SemanticDependencyUpdater ========
+
 ## -------- SemanticResultFormats --------
 # SemanticResultFormats included via Composer
 wfLoadExtension( "SemanticResultFormats" );

@@ -215,6 +215,9 @@ RUN composer-require.sh mediawiki/semantic-media-wiki 'dev-master#779f4784210de6
 ### SemanticCompoundQueries
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
 
+### SemanticDependencyUpdater
+RUN get-github-extension.sh SemanticDependencyUpdater 2.0.2 gesinn-it/SemanticDependencyUpdater
+
 ### SemanticResultFormats
 RUN COMPOSER=composer.local.json composer require --no-update phpoffice/phpspreadsheet 1.22.0
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-result-formats 4.0.1
