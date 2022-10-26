@@ -134,8 +134,6 @@ RUN get-github-extension.sh ConfirmAccount 2681e4d1712c4b2e9b6fcc02fb1aa01bf1f24
 ### CSS (2022-02-06)
 RUN get-github-extension.sh CSS 91f9d53fc0c58e2772719cf5e9d0bfd3d12151d4
 
-### Extension:DataTransfer
-
 ### DateDiff
 RUN get-github-extension.sh DateDiff 0.3.1
 
@@ -148,8 +146,6 @@ RUN get-github-extension.sh Echo 8c593b995992d4d3ede9bef58d39bc070a6cdd8d
 ### ExternalData
 RUN get-github-extension.sh ExternalData 3.0 && \
 	patch.sh extensions/ExternalData/sql/ExternalData.sql
-
-### Extension:HeaderTabs
 
 ### IDProvider
 RUN get-github-extension.sh IDProvider 2.0.2 gesinn-it/IDProvider
@@ -181,8 +177,6 @@ RUN COMPOSER=composer.local.json composer require --no-update professional-wiki/
 
 ### NativeSvgHandler (2021-12-05)
 RUN get-github-extension.sh NativeSvgHandler 13c02680047ec77fff4a6b7c4919e23c4ce7b081
-
-### Extension:Nuke
 
 ### NumberFormat (2022-02-25)
 RUN get-github-extension.sh NumberFormat a704f8834afbe21545079d577390a0a89560f072
@@ -224,8 +218,6 @@ RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic
 
 ### SimpleTooltip
 RUN get-github-extension.sh SimpleTooltip 2476bff8f4555f86795c26ca5fdb7db99bfe58d1 Fannon/SimpleTooltip
-
-### Extension:TitleBlacklist
 
 ### TitleIcon
 RUN get-github-extension.sh TitleIcon 5.2
