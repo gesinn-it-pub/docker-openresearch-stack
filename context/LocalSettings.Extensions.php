@@ -39,6 +39,11 @@ $egChameleonLayoutFile= __DIR__ . "/skins/chameleon/layouts/fixedhead.xml";
 wfLoadExtension( "AdminLinks" );
 ## ======== AdminLinks ========
 
+## -------- ApprovedRevs --------
+wfLoadExtension( "ApprovedRevs" );
+$egApprovedRevsAutomaticApprovals = false;
+## ======== ApprovedRevs ========
+
 ## -------- Arrays --------
 wfLoadExtension( "Arrays" );
 ## ======== Arrays ========
@@ -174,6 +179,11 @@ enableSemantics( $wgServer );
 # (see https://www.semantic-mediawiki.org/wiki/Help:Embedded_query_update)
 $smwgEnabledQueryDependencyLinksStore = true;
 ## ======== SemanticMediaWiki ========
+
+## -------- SemanticApprovedRevs --------
+# SemanticApprovedRevs included via Composer
+wfLoadExtension( "SemanticApprovedRevs" );
+## ======== SemanticApprovedRevs ========
 
 ## -------- SemanticCompoundQueries --------
 # SemanticCompoundQueries included via Composer

@@ -9,7 +9,7 @@ FROM gesinn/docker-mediawiki-sqlite:${MEDIAWIKI_VERSION}
 RUN rm -rf LocalSettings.php /var/www/data
 
 # add /build-tools and /tools
-RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.1.1 \
+RUN curl -LJ https://github.com/gesinn-it-pub/docker-mediawiki-tools/tarball/1.3.0 \
 	| tar xzC / --strip-components 1
 # override by custom tools
 COPY tools /tools
@@ -109,6 +109,9 @@ RUN composer-require.sh mediawiki/chameleon-skin 4.1.0
 ### AdminLinks
 RUN get-github-extension.sh AdminLinks 0.5
 
+### ApprovedRevs
+RUN get-github-extension.sh ApprovedRevs 1.7.3
+
 ### Arrays (2022-02-06)
 RUN get-github-extension.sh Arrays ce3f62878a825ef5df7a79e51fc2da7c95893a65
 
@@ -206,6 +209,9 @@ RUN get-github-extension.sh RegexFunctions af37c1050139b0b83360285e8d7ff9454d4c6
 ## ISO-P formatter
 RUN composer-require.sh mediawiki/semantic-media-wiki 'dev-master#779f4784210de69f104705b0ec6e136f38375698 as 4.0.2'
 
+### SemanticApprovedRevs
+RUN composer-require.sh mediawiki/semantic-approved-revs 0.9.1
+
 ### SemanticCompoundQueries
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
 
@@ -261,7 +267,7 @@ ADD LocalSettings.Debug.php .
 ######################################
 # set openresearch-stack version     #
 ######################################
-ARG OPENRESEARCH_STACK_VERSION=0.0.20
+ARG OPENRESEARCH_STACK_VERSION=0.0.22
 RUN echo $OPENRESEARCH_STACK_VERSION > openresearch-stack-version.txt && \
     echo "\$wgOpenResearchStackVersion = '$OPENRESEARCH_STACK_VERSION';" >> LocalSettings.Include.php
 
