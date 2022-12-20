@@ -182,7 +182,8 @@ $smwgEnabledQueryDependencyLinksStore = true;
 
 ## -------- SemanticApprovedRevs --------
 # SemanticApprovedRevs included via Composer
-wfLoadExtension( "SemanticApprovedRevs" );
+## temp. disabled due to https://github.com/SemanticMediaWiki/SemanticApprovedRevs/issues/29
+#wfLoadExtension( "SemanticApprovedRevs" );
 ## ======== SemanticApprovedRevs ========
 
 ## -------- SemanticCompoundQueries --------
