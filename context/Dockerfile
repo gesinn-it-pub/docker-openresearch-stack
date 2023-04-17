@@ -205,9 +205,9 @@ RUN get-github-extension.sh RegexFunctions af37c1050139b0b83360285e8d7ff9454d4c6
 ### ReplaceText (enabled as shipped with MediaWiki)
 
 ### SemanticMediaWiki
-#RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.0.2
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.1.1
 ## ISO-P formatter
-RUN composer-require.sh mediawiki/semantic-media-wiki 'dev-master#779f4784210de69f104705b0ec6e136f38375698 as 4.0.2'
+#RUN composer-require.sh mediawiki/semantic-media-wiki 'dev-master#779f4784210de69f104705b0ec6e136f38375698 as 4.0.2'
 
 ### SemanticApprovedRevs
 RUN composer-require.sh mediawiki/semantic-approved-revs 0.9.1
