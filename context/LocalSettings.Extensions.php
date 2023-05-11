@@ -180,12 +180,6 @@ enableSemantics( $wgServer );
 $smwgEnabledQueryDependencyLinksStore = true;
 ## ======== SemanticMediaWiki ========
 
-## -------- SemanticApprovedRevs --------
-# SemanticApprovedRevs included via Composer
-## temp. disabled due to https://github.com/SemanticMediaWiki/SemanticApprovedRevs/issues/29
-#wfLoadExtension( "SemanticApprovedRevs" );
-## ======== SemanticApprovedRevs ========
-
 ## -------- SemanticCompoundQueries --------
 # SemanticCompoundQueries included via Composer
 wfLoadExtension( "SemanticCompoundQueries" );

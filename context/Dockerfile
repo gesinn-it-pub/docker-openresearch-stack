@@ -110,7 +110,7 @@ RUN composer-require.sh mediawiki/chameleon-skin 4.1.0
 RUN get-github-extension.sh AdminLinks 0.5
 
 ### ApprovedRevs
-RUN get-github-extension.sh ApprovedRevs 1.7.3
+RUN get-github-extension.sh ApprovedRevs 16c6f25bf7b69f4f091d13c594f76652f2edeb87
 
 ### Arrays (2022-02-06)
 RUN get-github-extension.sh Arrays ce3f62878a825ef5df7a79e51fc2da7c95893a65
@@ -208,9 +208,6 @@ RUN get-github-extension.sh RegexFunctions af37c1050139b0b83360285e8d7ff9454d4c6
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.1.1
 ## ISO-P formatter
 #RUN composer-require.sh mediawiki/semantic-media-wiki 'dev-master#779f4784210de69f104705b0ec6e136f38375698 as 4.0.2'
-
-### SemanticApprovedRevs
-RUN composer-require.sh mediawiki/semantic-approved-revs 0.9.1
 
 ### SemanticCompoundQueries
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
