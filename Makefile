@@ -35,3 +35,7 @@ backstop-test:
 .PHONY: clean
 clean: down
 	rm -rf data
+
+.PHONY: bash
+bash:
+	$(compose) exec wiki bash
