@@ -100,7 +100,7 @@ RUN get-github-extension.sh CirrusSearch bb6b3475dc813bfb328ba012c880fd938d8a88c
 ######################################
 
 ### Chameleon
-RUN composer-require.sh mediawiki/chameleon-skin 4.1.0
+RUN composer-require.sh mediawiki/chameleon-skin 4.2.1
 
 ######################################
 # Extensions                         #
