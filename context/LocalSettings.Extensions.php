@@ -80,6 +80,12 @@ wfLoadExtension( "DisplayTitle" );
 wfLoadExtension( "Echo" );
 ## ======== Echo ========
 
+## -------- EditAccount --------
+# wfLoadExtension( "EditAccount" );
+# $wgGroupPermissions["sysop"]["editaccount"] = true;
+# $wgGroupPermissions["bureaucrat"]["editaccount"] = true;
+## ======== EditAccount ========
+
 ## -------- ExternalData --------
 wfLoadExtension( "ExternalData" );
 ## ======== ExternalData ========

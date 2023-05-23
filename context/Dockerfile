@@ -146,6 +146,9 @@ RUN get-github-extension.sh DisplayTitle 3.1
 ### Echo (REL1_35 2022-02-21)
 RUN get-github-extension.sh Echo 8c593b995992d4d3ede9bef58d39bc070a6cdd8d
 
+### EditAccount
+RUN get-github-extension.sh EditAccount 2.0.1 gesinn-it-pub/EditAccount
+
 ### ExternalData
 RUN get-github-extension.sh ExternalData 3.0 && \
 	patch.sh extensions/ExternalData/sql/ExternalData.sql
