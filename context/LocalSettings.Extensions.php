@@ -169,6 +169,7 @@ wfLoadExtension( "RegexFunctions" );
 
 ## -------- ReplaceText --------
 wfLoadExtension( "ReplaceText" );
+$wgReplaceTextResultsLimit = 1000;
 ## ======== ReplaceText ========
 
 ## -------- SemanticMediaWiki --------
