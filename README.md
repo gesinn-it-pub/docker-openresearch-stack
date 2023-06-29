@@ -1,8 +1,19 @@
-# docker-openresearch-stack
+# docker-openresearch-stack (DORS)
 
 Build a local OpenResearch Stack (MediaWiki &amp; extensions) with Docker.
 
 > This repository is for testing purpose and will be moved to a final location at a later point in time.
+
+## Project structure
+
+### `docker-compose.yml`
+Configuration file used by Docker Compose that defines services, networks, and volumes for DORS.
+
+### `Makefile`
+Main entry point and command line interface to test, build, run, destroy DORS.
+
+### `/context`
+A set of files "baked" into the Docker image. The build process can reference any of the files in the context.
 
 ## Requirements
 
