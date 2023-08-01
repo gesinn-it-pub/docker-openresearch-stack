@@ -78,6 +78,7 @@ wfLoadExtension( "DisplayTitle" );
 
 ## -------- Echo --------
 wfLoadExtension( "Echo" );
+$wgEchoUseJobQueue = true;
 ## ======== Echo ========
 
 ## -------- EditAccount --------
