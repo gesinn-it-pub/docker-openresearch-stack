@@ -155,7 +155,7 @@ RUN get-github-extension.sh ExternalData 3.0 && \
 	patch.sh extensions/ExternalData/sql/ExternalData.sql
 
 ### IDProvider
-RUN get-github-extension.sh IDProvider 2.0.2 gesinn-it/IDProvider
+RUN get-github-extension.sh IDProvider 2.0.3 gesinn-it/IDProvider
 
 #### ImageMap (enabled as shipped with MediaWiki)
 
