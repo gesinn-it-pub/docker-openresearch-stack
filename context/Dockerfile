@@ -209,7 +209,7 @@ RUN get-github-extension.sh RegexFunctions af37c1050139b0b83360285e8d7ff9454d4c6
 ### ReplaceText (enabled as shipped with MediaWiki)
 
 ### SemanticMediaWiki
-RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.1.1
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-media-wiki 4.1.2
 ## ISO-P formatter
 #RUN composer-require.sh mediawiki/semantic-media-wiki 'dev-master#779f4784210de69f104705b0ec6e136f38375698 as 4.0.2'
 
@@ -217,7 +217,7 @@ RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
 
 ### SemanticDependencyUpdater
-RUN get-github-extension.sh SemanticDependencyUpdater 2.0.2 gesinn-it/SemanticDependencyUpdater
+RUN get-github-extension.sh SemanticDependencyUpdater 3.0.0 gesinn-it/SemanticDependencyUpdater
 
 ### SemanticResultFormats
 RUN COMPOSER=composer.local.json composer require --no-update phpoffice/phpspreadsheet 1.22.0
