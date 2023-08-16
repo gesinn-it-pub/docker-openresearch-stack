@@ -142,7 +142,7 @@ RUN get-github-extension.sh CSS 91f9d53fc0c58e2772719cf5e9d0bfd3d12151d4
 RUN get-github-extension.sh DateDiff 0.3.1
 
 ### DisplayTitle
-RUN get-github-extension.sh DisplayTitle 3.1
+RUN get-github-extension.sh DisplayTitle 81279533fa75a0f800067a24c296fccb24f4b907 gesinn-it-pub/mediawiki-extensions-DisplayTitle
 
 ### Echo (REL1_35 2022-02-21)
 RUN get-github-extension.sh Echo 8c593b995992d4d3ede9bef58d39bc070a6cdd8d
