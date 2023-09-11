@@ -195,7 +195,7 @@ wfLoadExtension( "SemanticCompoundQueries" );
 
 ## -------- SemanticDependencyUpdater --------
 wfLoadExtension( "SemanticDependencyUpdater" );
-$wgSDUUseJobQueue = false;
+$wgSDUUseJobQueue = true;
 ## ======== SemanticDependencyUpdater ========
 
 ## -------- SemanticResultFormats --------
