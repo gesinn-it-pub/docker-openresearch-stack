@@ -42,6 +42,8 @@ wfLoadExtension( "AdminLinks" );
 ## -------- ApprovedRevs --------
 wfLoadExtension( "ApprovedRevs" );
 $egApprovedRevsAutomaticApprovals = false;
+$egApprovedRevsShowNotApprovedMessage = true;
+$wgGroupPermissions['approver']['approverevisions'] = true;
 ## ======== ApprovedRevs ========
 
 ## -------- Arrays --------
@@ -197,6 +199,18 @@ wfLoadExtension( "SemanticCompoundQueries" );
 wfLoadExtension( "SemanticDependencyUpdater" );
 $wgSDUUseJobQueue = true;
 ## ======== SemanticDependencyUpdater ========
+
+## -------- SemanticExtraSpecialProperties --------
+# SemanticExtraSpecialProperties included via Composer
+wfLoadExtension("SemanticExtraSpecialProperties");
+$sespgEnabledPropertyList[] = "_CUSER";
+$sespgEnabledPropertyList[] = "_REVID";
+$sespgEnabledPropertyList[] = "_SUBP";
+$sespgEnabledPropertyList[] = "_APPROVED";
+$sespgEnabledPropertyList[] = "_APPROVEDBY";
+$sespgEnabledPropertyList[] = "_APPROVEDDATE";
+$sespgEnabledPropertyList[] = "_APPROVEDSTATUS";
+## ======== SemanticExtraSpecialProperties ========
 
 ## -------- SemanticResultFormats --------
 # SemanticResultFormats included via Composer

@@ -219,6 +219,9 @@ RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic
 ### SemanticDependencyUpdater
 RUN get-github-extension.sh SemanticDependencyUpdater 3.0.0 gesinn-it/SemanticDependencyUpdater
 
+### SemanticExtraSpecialProperties
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-extra-special-properties 3.0.4
+
 ### SemanticResultFormats
 RUN COMPOSER=composer.local.json composer require --no-update phpoffice/phpspreadsheet 1.22.0
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-result-formats 4.0.1
