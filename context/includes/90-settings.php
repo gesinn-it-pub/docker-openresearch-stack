@@ -10,6 +10,8 @@ set_time_limit(300);
 
 ## MediaWiki Settings
 $wgFixDoubleRedirects = true;
+$wgMaxArticleSize = 4096;
+$wgAPIMaxResultSize = $wgMaxArticleSize*4096;
 $wgAPIMaxDBRows = 25000;
 $wgPFEnableStringFunctions = true;
 $wgCacheDirectory = "$IP/cache";
