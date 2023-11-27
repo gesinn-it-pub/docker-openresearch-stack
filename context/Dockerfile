@@ -217,7 +217,7 @@ RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-compound-queries 2.2.0
 
 ### SemanticDependencyUpdater
-RUN get-github-extension.sh SemanticDependencyUpdater 3.0.0 gesinn-it/SemanticDependencyUpdater
+RUN get-github-extension.sh SemanticDependencyUpdater 3.0.1 gesinn-it/SemanticDependencyUpdater
 
 ### SemanticExtraSpecialProperties
 RUN COMPOSER=composer.local.json composer require --no-update mediawiki/semantic-extra-special-properties 3.0.4
