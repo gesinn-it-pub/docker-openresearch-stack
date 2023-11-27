@@ -2,7 +2,8 @@ name: Publish docker image
 
 on:
   release:
-      types: [created]
+      types:
+        - published
   workflow_dispatch:
 
 env:
