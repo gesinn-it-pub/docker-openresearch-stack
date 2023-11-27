@@ -169,7 +169,7 @@ RUN get-github-extension.sh LegalLogin 62fcc432c1a6b7281e48c40fb2e83268a91fcc4a
 RUN get-github-extension.sh Loops 8415e0b22bbe6dce5cb4b34c5edf0c27b219e85b
 
 ### Maps
-RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps 9.0.7
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps 10.1.0
 
 ### Matomo
 RUN get-github-extension.sh Matomo v4.0.1 DaSchTour/matomo-mediawiki-extension
