@@ -175,7 +175,7 @@ RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps 9.0
 RUN get-github-extension.sh Matomo v4.0.1 DaSchTour/matomo-mediawiki-extension
 
 ### Mermaid
-RUN COMPOSER=composer.local.json composer require --no-update mediawiki/mermaid 3.0.1
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/mermaid 3.1.0
 
 ### Modern Timeline
 RUN COMPOSER=composer.local.json composer require --no-update professional-wiki/modern-timeline 1.2.1
